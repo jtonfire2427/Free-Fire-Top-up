@@ -1,0 +1,71 @@
+import React, { useState } from 'react';
+import { Card, CardContent, Button, Input, Label } from '@/components/ui';
+
+const FreeFireTopUp = () => {
+  const [playerID, setPlayerID] = useState('');
+  const [quantity, setQuantity] = useState(1);
+
+  const packages = [
+    { diamonds: 25, price: 23 },
+    { diamonds: 50, price: 35 },
+    { diamonds: 115, price: 75 },
+    { diamonds: 355, price: 225 },
+    { diamonds: 610, price: 380 },
+    { diamonds: 1850, price: 1100 },
+    { diamonds: 5060, price: 3030 }
+  ];
+
+  return (
+    <div className="p-4 max-w-md mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Free Fire Diamond Top Up</h1>
+
+      <Card className="mb-4">
+        <CardContent>
+          <Label>Player ID Code:</Label>
+          <Input 
+            value={playerID} 
+            onChange={(e) => setPlayerID(e.target.value)} 
+            placeholder="Enter your player ID here..." 
+          />
+
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            {packages.map((pkg, index) => (
+              <Button key={index} className="w-full">
+                {pkg.diamonds} Diamonds - ৳{pkg.price}
+              </Button>
+            ))}
+          </div>
+
+          <div className="mt-4 flex items-center">
+            <Button onClick={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}>-</Button>
+            <span className="mx-2">{quantity}</span>
+            <Button onClick={() => setQuantity(quantity + 1)}>+</Button>
+          </div>
+
+          <Button className="mt-4 w-full">PAY (BDT 0)</Button>
+        </CardContent>
+      </Card>
+
+      <div className="text-sm text-gray-500">
+        <p>Note: This is a demo website. Payments are not enabled.</p>
+      </div>
+    </div>
+  );
+};
+
+export default FreeFireTopUp;
+
+
+I have completed the first version of your Free Fire Top Up website.
+
+Would you like me to add any other features, like:
+
+More diamond packages?
+
+A help section for users?
+
+A more colorful design?
+
+
+Let me know.
+
